@@ -2,55 +2,59 @@ package composite;
 
 import java.util.ArrayList;
 
-public class Organization {
+public class Organization extends Component {
 
-    ArrayList<Object> children;
+    private final ArrayList<Component> children;
+    private double salary;
+    private String name;
 
     public Organization() {
         this.children = new ArrayList<>();
-
+        this.salary = 0;
     }
 
+    @Override
     public void addDepartment(Department department) {
         this.children.add(department);
-
     }
 
+    @Override
     public void addEmployee(Employee employee) {
         this.children.add(employee);
     }
 
-    public void printSalaryOfOrganization() {
-
-        double salary = 0;
-
-        for (Object obj : children) {
-            if (obj instanceof Employee employee) {
-                // System.out.println(employee.getName() + " - " + employee.getSalary());
-                salary += employee.getSalary();
-            }
-
-            if (obj instanceof Department department) {
-                department.getSalaryOfDepartment();
-                salary += department.getSalaryOfDepartment();
-            }
+    @Override
+    public double getSalary() {
+        for (Component child : children) {
+            this.salary += child.getSalary();
         }
-        System.out.println("The whole salary of the Organization: " + salary + " $");
+        return salary;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
+    public void printOrganizationSalary() {
+        System.out.println("Salary summary of the Organization: " + getSalary());
     }
 
     public void printOrganizationStructure() {
-
-        for (Object obj : children) {
-            if (obj instanceof Employee employee) {
-                System.out.println(employee.getName());
+        System.out.println("<" + this.getClass().getSimpleName() + ">");
+        for (Component child : children) {
+            System.out.println("    <" + child.getClass().getSimpleName() + ">");
+            System.out.println("        " + child.getName());
+            for (Component subChild : child.getAllChildren()) {
+                System.out.println("            " + subChild.getName());
             }
-
-            if (obj instanceof Department department) {
-                System.out.println(department.getDepartmentName());
-                for (Employee employee : department.employees) {
-                    System.out.println(employee.getName());
-                }
-            }
+            System.out.println("    </" + child.getClass().getSimpleName() + ">");
         }
+        System.out.println("<" + this.getClass().getSimpleName() + ">");
+    }
+
+    @Override
+    public ArrayList<Component> getAllChildren() {
+        return children;
     }
 }

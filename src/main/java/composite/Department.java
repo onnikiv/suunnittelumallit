@@ -2,38 +2,45 @@ package composite;
 
 import java.util.ArrayList;
 
-public class Department {
+public class Department extends Component {
 
     private final String name;
-    ArrayList<Employee> employees;
+    private double salary;
+
+    private final ArrayList<Component> children;
 
     public Department(String name) {
         this.name = name;
-        this.employees = new ArrayList<>();
+        this.children = new ArrayList<>();
+        this.salary = 0;
+    }
+
+    @Override
+    public void addDepartment(Department department) {
+        this.children.add(department);
 
     }
 
+    @Override
     public void addEmployee(Employee employee) {
-        this.employees.add(employee);
+        this.children.add(employee);
     }
 
-    public String getDepartmentName() {
+    @Override
+    public ArrayList<Component> getAllChildren() {
+        return children;
+    }
+
+    @Override
+    public double getSalary() {
+        for (Component child : children) {
+            this.salary += child.getSalary();
+        }
+        return salary;
+    }
+
+    @Override
+    public String getName() {
         return this.name;
     }
-
-    public double getEmployeeSalary(Employee employee) {
-        return employee.getSalary();
-    }
-
-    public double getSalaryOfDepartment() {
-        double departmentSalary = 0;
-
-        for (Employee employee : employees) {
-            departmentSalary += employee.getSalary();
-
-        }
-
-        return departmentSalary;
-    }
-
 }

@@ -4,28 +4,33 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Organization nokia = new Organization();
+        Organization organization = new Organization();
 
-        nokia.addEmployee(new Employee("Ylijohtaja Perttu", 100000));
+        Department department1 = new Department("Johtoporras");
+        Department department2 = new Department("HR");
+        Department department3 = new Department("Kaivostyöntekijät");
 
-        Department johtoPorras = new Department("Johtoporras");
-        Department kaivosHenkilöt = new Department("Kaivoshenkilöt");
+        Department department4 = new Department("Orjat");
 
-        johtoPorras.addEmployee(new Employee("Jorma", 5000));
+        Employee employee1 = new Employee("Ylijohtaja Perttu", 100000);
+        Employee employee2 = new Employee("Jorma", 3000);
+        Employee employee3 = new Employee("Maurizio", 1400);
+        Employee employee4 = new Employee("Onni", 3);
 
-        kaivosHenkilöt.addEmployee(new Employee("Sakari", 1500));
-        kaivosHenkilöt.addEmployee(new Employee("Elmo", 2000));
+        department1.addEmployee(employee1);
 
-        nokia.addDepartment(johtoPorras);
-        nokia.addDepartment(kaivosHenkilöt);
+        department2.addEmployee(employee2);
 
-        nokia.addEmployee(new Employee("Onni", 20));
+        department3.addEmployee(employee3);
+        department3.addEmployee(employee4);
 
-        Department HRDepartment = new Department("HR-department");
+        organization.addDepartment(department1);
+        organization.addDepartment(department2);
+        organization.addDepartment(department3);
 
-        nokia.addDepartment(HRDepartment);
+        department3.addDepartment(department4);
 
-        nokia.printSalaryOfOrganization();
-        nokia.printOrganizationStructure();
+        organization.printOrganizationStructure();
+
     }
 }
