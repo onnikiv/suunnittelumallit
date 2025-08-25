@@ -34,9 +34,23 @@ public class Organization {
                 department.getSalaryOfDepartment();
                 salary += department.getSalaryOfDepartment();
             }
-
         }
         System.out.println("The whole salary of the Organization: " + salary + " $");
     }
 
+    public void printOrganizationStructure() {
+
+        for (Object obj : children) {
+            if (obj instanceof Employee employee) {
+                System.out.println(employee.getName());
+            }
+
+            if (obj instanceof Department department) {
+                System.out.println(department.getDepartmentName());
+                for (Employee employee : department.employees) {
+                    System.out.println(employee.getName());
+                }
+            }
+        }
+    }
 }

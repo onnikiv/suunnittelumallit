@@ -21,10 +21,11 @@ public class Main {
 
         nokia.addEmployee(new Employee("Onni", 20));
 
-        Department testi = new Department("HR-Mammat");
+        Department HRDepartment = new Department("HR-department");
 
-        nokia.addDepartment(testi);
+        nokia.addDepartment(HRDepartment);
 
         nokia.printSalaryOfOrganization();
+        nokia.printOrganizationStructure();
     }
 }
