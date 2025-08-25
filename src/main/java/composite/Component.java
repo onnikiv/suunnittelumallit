@@ -13,4 +13,5 @@ public abstract class Component {
     public abstract String getName();
 
     public abstract ArrayList<Component> getAllChildren();
+
 }

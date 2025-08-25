@@ -31,6 +31,5 @@ public class Main {
         department3.addDepartment(department4);
 
         organization.printOrganizationStructure();
-
     }
 }

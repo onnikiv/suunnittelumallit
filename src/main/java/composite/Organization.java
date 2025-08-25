@@ -46,7 +46,9 @@ public class Organization extends Component {
             System.out.println("    <" + child.getClass().getSimpleName() + ">");
             System.out.println("        " + child.getName());
             for (Component subChild : child.getAllChildren()) {
+                System.out.println("        <" + subChild.getClass().getSimpleName() + ">");
                 System.out.println("            " + subChild.getName());
+                System.out.println("        </" + subChild.getClass().getSimpleName() + ">");
             }
             System.out.println("    </" + child.getClass().getSimpleName() + ">");
         }

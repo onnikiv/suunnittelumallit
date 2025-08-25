@@ -18,7 +18,6 @@ public class Department extends Component {
     @Override
     public void addDepartment(Department department) {
         this.children.add(department);
-
     }
 
     @Override

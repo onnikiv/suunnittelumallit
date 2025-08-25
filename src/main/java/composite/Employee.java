@@ -27,7 +27,7 @@ public class Employee extends Component {
         return null;
     }
 
-    // LEAF methods that have to be implemented
+    // LEAF metodit
     @Override
     public void addDepartment(Department department) {
         throw new UnsupportedOperationException("Not possible buddy");
