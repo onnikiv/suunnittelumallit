@@ -326,3 +326,6 @@ $RECYCLE.BIN/
 
 # Ignore Maven/Java build output
 target/
+
+# .vscode
+.vscode
