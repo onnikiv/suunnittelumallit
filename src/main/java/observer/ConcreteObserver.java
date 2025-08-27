@@ -9,6 +9,7 @@ public class ConcreteObserver implements Observer {
         this.name = name;
     }
 
+    @Override
     public String getName() {
         return this.name;
     }
@@ -17,5 +18,9 @@ public class ConcreteObserver implements Observer {
     public void updateTemperature(int temperature) {
         this.temperature = temperature;
         System.out.println(this.getName() + " temperature updated to " + temperature);
+    }
+
+    public int getTemperature() {
+        return this.temperature;
     }
 }
