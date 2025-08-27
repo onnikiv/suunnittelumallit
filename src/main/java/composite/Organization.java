@@ -5,12 +5,11 @@ import java.util.ArrayList;
 public class Organization extends Component {
 
     private final ArrayList<Component> children;
-    private double salary;
-    private String name;
+    private final String name;
 
-    public Organization() {
+    public Organization(String name) {
         this.children = new ArrayList<>();
-        this.salary = 0;
+        this.name = name;
     }
 
     @Override
@@ -19,16 +18,27 @@ public class Organization extends Component {
     }
 
     @Override
+    public void removeDepartment(Department department) {
+        children.remove(department);
+    }
+
+    @Override
     public void addEmployee(Employee employee) {
         this.children.add(employee);
     }
 
     @Override
+    public void removeEmployee(Employee employee) {
+        children.remove(employee);
+    }
+
+    @Override
     public double getSalary() {
+        double totalSalary = 0;
         for (Component child : children) {
-            this.salary += child.getSalary();
+            totalSalary += child.getSalary();
         }
-        return salary;
+        return totalSalary;
     }
 
     @Override
@@ -36,27 +46,45 @@ public class Organization extends Component {
         return this.name;
     }
 
+    @Override
+    public ArrayList<Component> getAllChildren() {
+        return children;
+    }
+
     public void printOrganizationSalary() {
         System.out.println("Salary summary of the Organization: " + getSalary());
     }
 
     public void printOrganizationStructure() {
-        System.out.println("<" + this.getClass().getSimpleName() + ">");
+        System.out.println("\n<" + this.getClass().getSimpleName() + " name=\"" + getName() + "\">");
+
         for (Component child : children) {
-            System.out.println("    <" + child.getClass().getSimpleName() + ">");
-            System.out.println("        " + child.getName());
-            for (Component subChild : child.getAllChildren()) {
-                System.out.println("        <" + subChild.getClass().getSimpleName() + ">");
-                System.out.println("            " + subChild.getName());
-                System.out.println("        </" + subChild.getClass().getSimpleName() + ">");
-            }
-            System.out.println("    </" + child.getClass().getSimpleName() + ">");
+            printChildStructure(child, 1);
         }
-        System.out.println("<" + this.getClass().getSimpleName() + ">");
+
+        System.out.println("</" + this.getClass().getSimpleName() + ">\n");
     }
 
-    @Override
-    public ArrayList<Component> getAllChildren() {
-        return children;
+    private void printChildStructure(Component component, int indent) {
+        String indentation = "  ".repeat(indent);
+
+        switch (component) {
+            case Employee employee ->
+                System.out.println(indentation + "<Employee name=\"" + employee.getName() + "\" salary=\"" + employee.getSalary() + "\"/>");
+            case Department department -> {
+                System.out.println(indentation + "<Department name=\"" + department.getName() + "\">");
+
+                ArrayList<Component> deptChildren = department.getAllChildren();
+                if (department.getAllChildren() != null) {
+                    for (Component child : deptChildren) {
+                        printChildStructure(child, indent + 1);
+                    }
+                }
+
+                System.out.println(indentation + "</Department>");
+            }
+            default -> {
+            }
+        }
     }
 }

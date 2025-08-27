@@ -5,14 +5,11 @@ import java.util.ArrayList;
 public class Department extends Component {
 
     private final String name;
-    private double salary;
-
     private final ArrayList<Component> children;
 
     public Department(String name) {
         this.name = name;
         this.children = new ArrayList<>();
-        this.salary = 0;
     }
 
     @Override
@@ -32,14 +29,25 @@ public class Department extends Component {
 
     @Override
     public double getSalary() {
+        double totalSalary = 0;
         for (Component child : children) {
-            this.salary += child.getSalary();
+            totalSalary += child.getSalary();
         }
-        return salary;
+        return totalSalary;
     }
 
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public void removeDepartment(Department department) {
+        children.remove(department);
+    }
+
+    @Override
+    public void removeEmployee(Employee employee) {
+        children.remove(employee);
     }
 }

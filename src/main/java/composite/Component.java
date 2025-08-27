@@ -6,7 +6,11 @@ public abstract class Component {
 
     public abstract void addDepartment(Department department);
 
+    public abstract void removeDepartment(Department department);
+
     public abstract void addEmployee(Employee employee);
+
+    public abstract void removeEmployee(Employee employee);
 
     public abstract double getSalary();
 

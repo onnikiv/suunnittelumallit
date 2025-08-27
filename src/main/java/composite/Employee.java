@@ -37,4 +37,14 @@ public class Employee extends Component {
     public void addEmployee(Employee employee) {
         throw new UnsupportedOperationException("Not possible buddy");
     }
+
+    @Override
+    public void removeDepartment(Department department) {
+        throw new UnsupportedOperationException("Not possible buddy");
+    }
+
+    @Override
+    public void removeEmployee(Employee employee) {
+        throw new UnsupportedOperationException("Not possible buddy");
+    }
 }
