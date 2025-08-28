@@ -38,6 +38,7 @@ public class Logger {
     }
 
     public void setFileName(String filename) {
+        System.out.println(this.filename + " has been renamed to: " + filename);
         this.filename = filename;
         File newFilename = new File(path + filename);
         file.renameTo(newFilename);
