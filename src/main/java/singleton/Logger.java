@@ -22,7 +22,6 @@ public class Logger {
                 System.out.println("File already exists.");
             }
 
-            // Initialize the writer field
             this.writer = new FileWriter(file, true);
 
         } catch (IOException e) {
@@ -40,7 +39,14 @@ public class Logger {
     }
 
     public void setFileName(String filename) {
-        System.out.println(this.filename + " ///" + filename);
+        try {
+            if (this.writer != null) {
+                this.writer.close();
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while closing current writer: " + e.getMessage());
+        }
+
         this.filename = filename;
         this.file = new File(path + filename);
 
@@ -50,6 +56,9 @@ public class Logger {
             } else {
                 System.out.println("File already exists: " + file.getName());
             }
+
+            this.writer = new FileWriter(file, true);
+
         } catch (IOException e) {
             System.out.println("An error occurred while creating new file: " + e.getMessage());
         }
