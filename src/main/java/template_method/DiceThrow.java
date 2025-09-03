@@ -1,12 +1,11 @@
 package template_method;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Scanner;
 
 public class DiceThrow {
 
-    private ArrayList<Dice> diceThrow;
+    private final ArrayList<Dice> diceThrow;
     private static final Scanner scanner = new Scanner(System.in);
 
     public DiceThrow() {
@@ -15,41 +14,32 @@ public class DiceThrow {
         for (int i = 0; i < 5; i++) {
             this.diceThrow.add(new Dice());
         }
-        this.diceThrow.sort(Comparator.comparingInt(Dice::getFace));
+
         displayDice();
     }
 
     public void throwNew(int dice) {
-
-        switch (dice) {
-            case 0 -> {
-                this.diceThrow.set(0, new Dice());
-            }
-            case 1 -> {
-                this.diceThrow.set(1, new Dice());
-            }
-            case 2 -> {
-                this.diceThrow.set(2, new Dice());
-            }
-            case 3 -> {
-                this.diceThrow.set(3, new Dice());
-            }
-            case 4 -> {
-                this.diceThrow.set(4, new Dice());
-            }
-
+        int index = dice - 1;
+        if (index >= 0 && index < this.diceThrow.size()) {
+            this.diceThrow.set(index, new Dice());
         }
     }
 
     public void diceToThrowAgain() {
         ArrayList<Integer> diceToThrow = new ArrayList<>();
-        System.out.println("Select dices to throw again:    Enter (0) to quit.");
+        System.out.println("Select dices to throw again (1-5):    Enter (0) to quit.");
 
         while (true) {
             int dice = scanner.nextInt();
 
             if (dice == 0) {
                 break;
+            }
+
+            // Validate input
+            if (dice < 1 || dice > 5) {
+                System.out.println("Invalid input! Please enter a number between 1 and 5, or 0 to quit.");
+                continue;
             }
 
             if (diceToThrow.contains(dice)) {
@@ -61,9 +51,10 @@ public class DiceThrow {
             System.out.println("Selected dices: " + diceToThrow);
 
         }
+        System.out.println("Selected dices: " + diceToThrow);
 
-        for (int i = 0; i <= diceToThrow.size(); i++) {
-            throwNew(i);
+        for (int i = 0; i < diceToThrow.size(); i++) {
+            throwNew(diceToThrow.get(i));
         }
 
         displayDice();
