@@ -2,7 +2,7 @@ package template_method;
 
 public final class Dice {
 
-    private int face;
+    private final int face;
 
     public Dice() {
         this.face = (int) (Math.random() * 6) + 1;
