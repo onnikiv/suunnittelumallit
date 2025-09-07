@@ -15,3 +15,4 @@ This repository contains my completed assignments from the Design Patterns cours
 | 7.  | State            | [Link to Assignment](/src/main/java/state/)            |
 | 8.  | Template Method  | [Link to Assignment](/src/main/java/template_method/)  |
 | 9.  | Strategy         | [Link to Assignment](/src/main/java/strategy/)         |
+| 10. | Chain of Responsibility | [Link to Assignment](/src/main/java/chain_of_responsibility/)         |
