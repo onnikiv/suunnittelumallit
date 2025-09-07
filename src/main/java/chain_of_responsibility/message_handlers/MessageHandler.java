@@ -1,6 +1,6 @@
-package chainf_of_responsibility.message_handlers;
+package chain_of_responsibility.message_handlers;
 
-import chainf_of_responsibility.message.Message;
+import chain_of_responsibility.message.Message;
 
 public abstract class MessageHandler {
 

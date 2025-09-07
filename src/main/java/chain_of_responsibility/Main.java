@@ -1,12 +1,12 @@
-package chainf_of_responsibility;
+package chain_of_responsibility;
 
-import chainf_of_responsibility.message.Message;
-import chainf_of_responsibility.message.MessageType;
-import chainf_of_responsibility.message_handlers.CompensationHandler;
-import chainf_of_responsibility.message_handlers.ContactRequestHandler;
-import chainf_of_responsibility.message_handlers.DevelopmentSuggestionHandler;
-import chainf_of_responsibility.message_handlers.GeneralFeedbackHandler;
-import chainf_of_responsibility.message_handlers.MessageHandler;
+import chain_of_responsibility.message.Message;
+import chain_of_responsibility.message.MessageType;
+import chain_of_responsibility.message_handlers.CompensationHandler;
+import chain_of_responsibility.message_handlers.ContactRequestHandler;
+import chain_of_responsibility.message_handlers.DevelopmentSuggestionHandler;
+import chain_of_responsibility.message_handlers.GeneralFeedbackHandler;
+import chain_of_responsibility.message_handlers.MessageHandler;
 
 public class Main {
 

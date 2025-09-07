@@ -1,4 +1,4 @@
-package chainf_of_responsibility.message;
+package chain_of_responsibility.message;
 
 public enum MessageType {
     // compensation claims, contact requests, development suggestions, and general feedback.
