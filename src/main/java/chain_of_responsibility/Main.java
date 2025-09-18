@@ -23,7 +23,6 @@ public class Main {
         contactRequest.setNextMessageHandler(developmentSuggestion);
         developmentSuggestion.setNextMessageHandler(generalFeedback);
 
-        // pelkästään generalfeedback
         primaryMessageHandler = compensation;
 
         Message compensationMessage = new Message(MessageType.COMPENSATION_CLAIM, "I want my money back", "compensation@demo.com");
