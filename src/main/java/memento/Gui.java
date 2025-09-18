@@ -5,6 +5,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -66,6 +67,21 @@ public class Gui extends Application {
         stage.setScene(scene);
         stage.setTitle("Memento Pattern Example");
         stage.show();
+
+        // Create a new Stage for history
+        Stage historyStage = new Stage();
+        historyStage.setTitle("History");
+
+        // Create a ListView to display history items
+        ListView<String> historyListView = new ListView<>();
+
+        // Set up the scene for the history stage
+        Scene historyScene = new Scene(historyListView, 300, 200);
+        historyStage.setScene(historyScene);
+
+        // Show the history stage
+        historyStage.show();
+
     }
 
     public void updateGui() {
