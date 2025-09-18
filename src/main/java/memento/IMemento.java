@@ -1,6 +1,9 @@
 package memento;
 
 public interface IMemento {
-    // memento metadata methods
 
+    // memento methods
+    String getTimestamp();
+
+    String getDescription();
 }

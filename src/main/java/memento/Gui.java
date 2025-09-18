@@ -61,6 +61,10 @@ public class Gui extends Application {
                 // Ctrl-Z: undo
                 System.out.println("Undo key combination pressed");
                 controller.undo();
+            } else if (event.isControlDown() && event.getCode() == KeyCode.Y) {
+                // Ctrl-Y: redo
+                System.out.println("Redo key combination pressed");
+                controller.redo();
             }
         });
 
@@ -90,5 +94,6 @@ public class Gui extends Application {
         colorBox2.setColor(controller.getOption(2));
         colorBox3.setColor(controller.getOption(3));
         checkBox.setSelected(controller.getIsSelected());
+
     }
 }
