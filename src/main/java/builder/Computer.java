@@ -1,20 +1,17 @@
 package builder;
 
+import java.util.ArrayList;
+
 public class Computer {
 
-    private String processor;
-    private int ramSize;
-    private String hardDrive;
-    private String graphicsCard;
-    private String operatingSystem;
+    private final ArrayList<Component> components;
 
-    public Computer(String processor, int ramSize, String hardDrive, String graphicsCard, String operatingSystem) {
-        this.processor = processor;
-        this.ramSize = ramSize;
-        this.hardDrive = hardDrive;
-        this.graphicsCard = graphicsCard;
-        this.operatingSystem = operatingSystem;
+    public Computer() {
+        this.components = new ArrayList<>();
+    }
 
+    public void addComponent(Component component) {
+        this.components.add(component);
     }
 
 }
