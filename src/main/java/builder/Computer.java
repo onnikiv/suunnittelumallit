@@ -14,4 +14,13 @@ public class Computer {
         this.components.add(component);
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Component component : components) {
+            sb.append(component.getName());
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 }

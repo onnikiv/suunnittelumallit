@@ -38,4 +38,9 @@ public class GamingComputerBuilder implements ComputerBuilder {
 
     }
 
+    @Override
+    public Computer getComputer() {
+        return computer;
+    }
+
 }

@@ -38,4 +38,9 @@ public class OfficeComputerBuilder implements ComputerBuilder {
 
     }
 
+    @Override
+    public Computer getComputer() {
+        return computer;
+    }
+
 }
