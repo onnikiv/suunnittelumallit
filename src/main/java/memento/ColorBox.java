@@ -5,11 +5,13 @@ import javafx.scene.shape.Rectangle;
 
 public class ColorBox {
 
+    @SuppressWarnings("unused")
     private int id;
+    @SuppressWarnings("unused")
     private Controller controller;
 
-    private Rectangle rectangle;
-    private Color[] colors = {Color.RED, Color.BLUE, Color.YELLOW};
+    private final Rectangle rectangle;
+    private final Color[] colors = {Color.RED, Color.BLUE, Color.YELLOW};
     private int colorIndex = 0;
 
     public ColorBox(int id, Controller controller) {

@@ -20,6 +20,8 @@ public class Gui extends Application {
     private ColorBox colorBox3;
     private CheckBox checkBox;
 
+    @Override
+    @SuppressWarnings("static-access")
     public void start(Stage stage) {
 
         controller = new Controller(this);
