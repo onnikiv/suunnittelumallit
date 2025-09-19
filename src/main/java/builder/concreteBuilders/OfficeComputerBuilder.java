@@ -19,7 +19,7 @@ public class OfficeComputerBuilder implements ComputerBuilder {
 
     @Override
     public void buildRAM() {
-        computer.addComponent(new Component("8"));
+        computer.addComponent(new Component("8 RAM"));
     }
 
     @Override

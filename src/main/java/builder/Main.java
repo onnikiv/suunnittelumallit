@@ -1,19 +1,26 @@
 package builder;
 
 import builder.concreteBuilders.GamingComputerBuilder;
+import builder.concreteBuilders.OfficeComputerBuilder;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ComputerBuilder builder = new GamingComputerBuilder();
-        ComputerDirector director = new ComputerDirector(builder);
+        ComputerBuilder gaming_pc_builder = new GamingComputerBuilder();
+        ComputerBuilder office_pc_builder = new OfficeComputerBuilder();
 
-        director.constructGamingComputer();
+        ComputerDirector director1 = new ComputerDirector(gaming_pc_builder);
+        ComputerDirector director2 = new ComputerDirector(office_pc_builder);
 
-        Computer computer = builder.getComputer();
+        director1.constructGamingComputer();
+        director2.constructOfficeComputer();
 
-        System.out.println(computer);
+        Computer gamingPC = gaming_pc_builder.getComputer();
+        Computer officePC = office_pc_builder.getComputer();
+
+        System.out.println(gamingPC);
+        System.out.println(officePC);
 
     }
 }

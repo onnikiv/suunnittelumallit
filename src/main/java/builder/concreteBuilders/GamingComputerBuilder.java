@@ -19,7 +19,7 @@ public class GamingComputerBuilder implements ComputerBuilder {
 
     @Override
     public void buildRAM() {
-        computer.addComponent(new Component("32"));
+        computer.addComponent(new Component("32 RAM"));
     }
 
     @Override
@@ -34,7 +34,7 @@ public class GamingComputerBuilder implements ComputerBuilder {
 
     @Override
     public void buildOperatingSystem() {
-        computer.addComponent(new Component("WINDOWS 11"));
+        computer.addComponent(new Component("WINDOWS 11 PRO"));
 
     }
 
