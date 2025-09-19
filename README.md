@@ -16,7 +16,7 @@ This repository contains my completed assignments from the Design Patterns cours
 | 8.  | Template Method         | [Link to Assignment](/src/main/java/template_method/)         |
 | 9.  | Strategy                | [Link to Assignment](/src/main/java/strategy/)                |
 | 10. | Chain of Responsibility | [Link to Assignment](/src/main/java/chain_of_responsibility/) |
-| 11. | Memento                 | [Link to Assignment](/src/main/java/mememnto/)                |
+| 11. | Memento                 | [Link to Assignment](/src/main/java/memento/)                 |
 | 12. | Proxy                   | [Link to Assignment](/src/main/java/proxy/)                   |
 | 13. | Visitor                 | [Link to Assignment](/src/main/java/visitor/)                 |
 | 14. | Builder                 | [Link to Assignment](/src/main/java/builder/)                 |
