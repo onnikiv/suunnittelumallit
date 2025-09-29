@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 public class MapView extends Application {
 
     private static final int TILE_SIZE = 80;
-    private final MapController controller = new MapController(new WildernessMap()); // Map type
+    private final MapController controller = new MapController(new WildernessMap()); // Map type, CityMap or WildernessMap
     private final int CANVAS_WIDTH = controller.getGridWidth() * TILE_SIZE;
     private final int CANVAS_HEIGHT = controller.getGridHeight() * TILE_SIZE;
     private final Canvas canvas = new Canvas(CANVAS_WIDTH, CANVAS_HEIGHT);
