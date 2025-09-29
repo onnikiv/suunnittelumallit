@@ -10,10 +10,8 @@ public class MapController {
     private static final int GRID_WIDTH = 8;
     private static final int GRID_HEIGHT = 8;
     private final ArrayList<Tile> tiles;
-    private final Map map;
 
     public MapController(Map map) {
-        this.map = map;
         this.tiles = map.createMap();
     }
 
