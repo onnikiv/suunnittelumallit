@@ -23,3 +23,4 @@ This repository contains my completed assignments from the Design Patterns cours
 | 15. | Adapter                 | [Link to Assignment](/src/main/java/adapter/)                 |
 | 16. | Bridge                  | [Link to Assignment](/src/main/java/bridge/)                  |
 | 17. | Flyweight               | [Link to Assignment](/src/main/java/flyweight/)               |
+| 18. | Prototype               | [Link to Assignment](/src/main/java/prototype/)               |
