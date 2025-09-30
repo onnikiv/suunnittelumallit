@@ -24,3 +24,6 @@ This repository contains my completed assignments from the Design Patterns cours
 | 16. | Bridge                  | [Link to Assignment](/src/main/java/bridge/)                  |
 | 17. | Flyweight               | [Link to Assignment](/src/main/java/flyweight/)               |
 | 18. | Prototype               | [Link to Assignment](/src/main/java/prototype/)               |
+| 19. | Mediator                | [Link to Assignment](/src/main/java/mediator/)                |
+| 20. | Iterator                | [Link to Assignment](/src/main/java/iterator/)                |
+| 21. | Facade                  | [Link to Assignment](/src/main/java/facade/)                  |
