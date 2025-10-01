@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) {
-        JokeClient client = new JokeClient();
+        ApiFacade client = new ApiFacade();
         try {
 
             System.out.println(client.getAttributeValueFromJson("https://api.chucknorris.io/jokes/random", "value"));
