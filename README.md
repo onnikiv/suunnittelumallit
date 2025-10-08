@@ -27,3 +27,4 @@ This repository contains my completed assignments from the Design Patterns cours
 | 19. | Mediator                | [Link to Assignment](/src/main/java/mediator/)                |
 | 20. | Iterator                | [Link to Assignment](/src/main/java/iterator/)                |
 | 21. | Facade                  | [Link to Assignment](/src/main/java/facade/)                  |
+| 20. | Command                 | [Link to Assignment](/src/main/java/command/)                 |
